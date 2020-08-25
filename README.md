@@ -34,6 +34,8 @@ Add this setting to maven pom file. Default lifecycle set to PACKAGE phase.
             <endPoint>http://ip:port/wsdl</endPoint>
             <xsdDirectory>xsd</xsdDirectory>
             <relativeSaveDirectory>src/main/resources/wsdl</relativeSaveDirectory>
+            <wsdlName>wsdl.xml</wsdlName>
+            <xsdPrefix>import-num</xsdPrefix>
         </configuration>
 </plugin>
 ```
