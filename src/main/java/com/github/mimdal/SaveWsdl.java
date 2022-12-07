@@ -15,9 +15,13 @@ import java.io.IOException;
 
 /**
  * Saves the soap WSDL file and all xsd files. Default lifecycle set to PACKAGE phase.
+ *
+ * @author mohamad.dehghan
+ * @since 3/6/20
  */
 @Mojo(name = "save", defaultPhase = LifecyclePhase.PACKAGE)
 public class SaveWsdl extends AbstractMojo {
+
     /**
      * wsdl end-point url
      */
@@ -53,7 +57,7 @@ public class SaveWsdl extends AbstractMojo {
      * Saves the soap WSDL file and XSDs (XML Schema Definition)
      */
     @Parameter(defaultValue = "${project}", required = true, readonly = true)
-    MavenProject project;
+    private MavenProject project;
 
     public void execute() throws MojoExecutionException, MojoFailureException {
         String projectDirectory = project.getBasedir().getAbsolutePath() + File.separator;
@@ -66,5 +70,4 @@ public class SaveWsdl extends AbstractMojo {
                     , e);
         }
     }
-
 }
