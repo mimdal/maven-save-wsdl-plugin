@@ -6,6 +6,7 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.Node;
+import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
@@ -18,11 +19,9 @@ import java.net.URL;
 import java.util.*;
 
 /**
- * Author:  mohamad.dehghan
- * Date:    3/6/20
- * Time:    3:20 AM
+ * @author mohamad.dehghan
+ * @since 3/6/20
  */
-
 public class XmlProcess {
     private static final String ATTRIBUTE_NAME = "schemaLocation";
     private Document document;
@@ -95,11 +94,11 @@ public class XmlProcess {
     private void saveAsFile(String directory, String fileName) throws IOException {
         File dir = new File(directory);
         if (!dir.exists()) dir.mkdirs();
-        String filePathAndName = directory + File.separator + fileName;
-        XMLWriter writer = new XMLWriter(new FileWriter(new File(filePathAndName)));
+        final String filePathAndName = directory + File.separator + fileName;
+        final XMLWriter writer = new XMLWriter(new FileWriter(filePathAndName), OutputFormat.createPrettyPrint());
         writer.write(document);
         writer.close();
-        logger.info( filePathAndName+ " was saved.");
+        logger.info(filePathAndName + " was saved.");
     }
 
     private void processNodes(List<Node> xsdNodes, boolean isXsd) throws MalformedURLException {
