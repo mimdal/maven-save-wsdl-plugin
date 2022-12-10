@@ -5,7 +5,7 @@
     <groupId>com.github.mimdal</groupId>
     <artifactId>save-wsdl-maven-plugin</artifactId>
     <name>save-wsdl-maven-plugin project</name>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
 
     <packaging>maven-plugin</packaging>
     <url>http://maven.apache.org</url>
@@ -33,7 +33,7 @@
         <url>https://github.com/mimdal/repositories</url>
         <connection>scm:git:https://github.com/mimdal/maven-save-wsdl-plugin.git</connection>
         <developerConnection>scm:git:https://github.com/mimdal/maven-save-wsdl-plugin.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>save-wsdl-maven-plugin-1.2</tag>
     </scm>
 
     <dependencies>
